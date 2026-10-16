@@ -1,0 +1,13 @@
+#!/bin/bash
+    for ((a = 1; a<=$#; a++))
+        do
+            for ((b = a+1; b<=$#; b++))
+                do
+                    if [[ "${!a}" =  "${!b}" ]]
+                        then
+                            echo "есть дубликаты"
+                            exit 0 
+                    fi
+                done 
+        done
+    echo "все элементы уникальны"
